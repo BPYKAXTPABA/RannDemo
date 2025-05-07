@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
 
-        // Отключаем хитбокс при запуске игры
+        // Disable hitbox when starting the game
         if (swordHitbox != null)
             swordHitbox.SetActive(false);
     }
@@ -37,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
         cooldownTimer += Time.deltaTime;
     }
 
-    // Вызывается в момент начала удара
+    // Called at the moment the hit begins
     public void EnableHitbox()
     {
         if (swordHitbox != null)
@@ -46,7 +46,7 @@ public class PlayerAttack : MonoBehaviour
             SoundManager.instance.PlaySound(attackClip);
     }
 
-    // Вызывается в конце удара
+    // Called at the moment the hit ends
     public void DisableHitbox()
     {
         if (swordHitbox != null)
